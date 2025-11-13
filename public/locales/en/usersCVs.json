@@ -1,0 +1,12 @@
+{
+  "table": {
+    "name": "Name",
+    "education": "Education",
+    "employee": "Employee"
+  },
+  "actions": {
+    "createCv": "Create CV",
+    "deleteCv": "Delete CV",
+    "deleteMessage": "Are you sure you want to delete"
+  }
+}

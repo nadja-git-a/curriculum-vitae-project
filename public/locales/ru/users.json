@@ -1,0 +1,18 @@
+{
+  "sidebar": {
+    "employees": "Сотрудники",
+    "skills": "Навыки",
+    "languages": "Языки",
+    "cvs": "Резюме"
+  },
+  "search": {
+    "placeholder": "Поиск"
+  },
+  "table": {
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "email": "Почта",
+    "department": "Отдел",
+    "position": "Должность"
+  }
+}

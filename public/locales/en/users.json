@@ -1,0 +1,18 @@
+{
+  "sidebar": {
+    "employees": "Employees",
+    "skills": "Skills",
+    "languages": "Languages",
+    "cvs": "CVs"
+  },
+  "search": {
+    "placeholder": "Search"
+  },
+  "table": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "department": "Department",
+    "position": "Position"
+  }
+}
