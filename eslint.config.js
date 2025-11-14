@@ -16,11 +16,16 @@ export default [
   prettierConfig,
 
   {
-    files: ["**/*.{ts,tsx,js,jsx}"],
+    files: ["src/**/*.{ts,tsx}"],
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...globals.es2020,
+      },
+      parserOptions: {
+        project: ["./tsconfig.app.json"],
+      },
     },
     plugins: {
       react,
@@ -43,7 +48,25 @@ export default [
         { allowConstantExport: true },
       ],
 
-      "simple-import-sort/imports": "warn",
+      "simple-import-sort/imports": [
+        "error",
+        {
+          groups: [
+            ["^node:"],
+            ["^@?\\w"],
+            [
+              "^@/",
+              "^app/",
+              "^pages/",
+              "^widgets/",
+              "^features/",
+              "^entities/",
+              "^shared/",
+            ],
+            ["^\\./", "^\\.\\./"],
+          ],
+        },
+      ],
       "simple-import-sort/exports": "warn",
 
       "no-console": ["warn", { allow: ["warn", "error"] }],
