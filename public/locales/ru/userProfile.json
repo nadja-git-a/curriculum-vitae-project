@@ -1,0 +1,19 @@
+{
+  "tabs": {
+    "profile": "Профиль",
+    "skills": "Навыки",
+    "languages": "Языки"
+  },
+  "upload": {
+    "title": "Загрузить аватар",
+    "description": "png, jpg или gif размером не более 0.5 МБ"
+  },
+  "memberSince": "С нами с ",
+  "fields": {
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "department": "Отдел",
+    "position": "Должность"
+  },
+  "updateButton": "Обновить"
+}

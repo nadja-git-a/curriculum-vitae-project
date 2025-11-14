@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "addProject": "Добавить проект"
+  },
+  "fields": {
+    "name": "Название",
+    "domain": "Домен",
+    "startDate": "Дата начала",
+    "endDate": "Дата окончания",
+    "environments": "Технологии",
+    "responsibilities": "Обязанности"
+  }
+}

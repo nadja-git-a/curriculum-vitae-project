@@ -1,0 +1,19 @@
+{
+  "tabs": {
+    "profile": "Profile",
+    "skills": "Skills",
+    "languages": "Languages"
+  },
+  "upload": {
+    "title": "Upload avatar image",
+    "description": "png, jpg or gif no more than 0.5MB"
+  },
+  "memberSince": "A member since ",
+  "fields": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "department": "Department",
+    "position": "Position"
+  },
+  "updateButton": "Update"
+}

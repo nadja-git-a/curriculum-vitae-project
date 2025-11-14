@@ -1,0 +1,20 @@
+{
+  "navigation": {
+    "employees": "Сотрудники",
+    "skills": "Навыки",
+    "languages": "Языки",
+    "cvs": "Резюме",
+    "profile": "Профиль"
+  },
+  "actions": {
+    "search": "Поиск",
+    "update": "Обновить",
+    "login": "Войти",
+    "signUp": "Зарегистрироваться",
+    "email": "Почта",
+    "password": "Пароль",
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "upload": "Загрузить"
+  }
+}

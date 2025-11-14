@@ -1,0 +1,20 @@
+{
+  "navigation": {
+    "employees": "Employees",
+    "skills": "Skills",
+    "languages": "Languages",
+    "cvs": "CVs",
+    "profile": "Profile"
+  },
+  "actions": {
+    "search": "Search",
+    "update": "Update",
+    "login": "Log in",
+    "signUp": "Sign up",
+    "email": "Email",
+    "password": "Password",
+    "save": "Save",
+    "cancel": "Cancel",
+    "upload": "Upload"
+  }
+}
