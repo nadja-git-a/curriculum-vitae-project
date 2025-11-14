@@ -1,6 +1,6 @@
 import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
 import resourcesToBackend from "i18next-resources-to-backend";
+import { initReactI18next } from "react-i18next";
 
 type Language = "en" | "ru";
 
@@ -21,8 +21,8 @@ i18n
   .use(initReactI18next)
   .use(
     resourcesToBackend((lang: Language, ns: Namespace) =>
-      fetch(`/locales/${lang}/${ns}.json`).then((res) => res.json())
-    )
+      fetch(`/locales/${lang}/${ns}.json`).then((res) => res.json()),
+    ),
   )
   .init({
     lng: "en",
