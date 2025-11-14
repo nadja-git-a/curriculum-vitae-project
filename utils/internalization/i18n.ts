@@ -27,21 +27,14 @@ i18n
   .init({
     lng: "en",
     fallbackLng: "en",
-    ns: [
-      "common",
-      "detailsCV",
-      "language",
-      "login",
-      "previewCV",
-      "projectsCV",
-      "signUp",
-      "skills",
-      "userProfile",
-      "users",
-      "usersCVs",
-    ],
+    ns: [],
     defaultNS: "common",
     interpolation: {
       escapeValue: false,
+    },
+    react: {
+      useSuspense: true,
+      bindI18n: "languageChanged loaded",
+      bindI18nStore: "added removed",
     },
   });
