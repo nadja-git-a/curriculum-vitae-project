@@ -1,4 +1,23 @@
 import React from "react";
-function App1() {
-  return null;
+import ReactDOM from "react-dom/client";
+
+import { App } from "app/App";
+
+import "@fontsource/nunito-sans/300.css";
+import "@fontsource/nunito-sans/400.css";
+import "@fontsource/nunito-sans/500.css";
+import "@fontsource/nunito-sans/600.css";
+import "@fontsource/nunito-sans/700.css";
+import "@fontsource/nunito-sans/800.css";
+
+const rootElement = document.getElementById("root");
+
+if (!rootElement) {
+  throw new Error("Root element not found");
 }
+
+ReactDOM.createRoot(rootElement as HTMLElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

@@ -38,7 +38,9 @@ export default [
       react: { version: "detect" },
     },
     rules: {
-      "prettier/prettier": ["error"],
+      "prettier/prettier": ["error", {
+        trailingComma: "es5", 
+      },],
 
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
