@@ -38,3 +38,5 @@ i18n
       bindI18nStore: "added removed",
     },
   });
+
+export default i18n;

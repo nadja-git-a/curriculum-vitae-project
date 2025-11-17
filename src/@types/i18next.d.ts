@@ -12,21 +12,23 @@ import usersCVs from "../../public/locales/en/usersCVs.json";
 
 import "i18next";
 
+const resources = {
+  common,
+  detailsCV,
+  language,
+  login,
+  previewCV,
+  projectsCV,
+  signUp,
+  skills,
+  userProfile,
+  users,
+  usersCVs,
+};
+
 declare module "i18next" {
   interface CustomTypeOptions {
     defaultNS: "common";
-    resources: {
-      common: typeof common;
-      detailsCV: typeof detailsCV;
-      language: typeof language;
-      login: typeof login;
-      previewCV: typeof previewCV;
-      projectsCV: typeof projectsCV;
-      signUp: typeof signUp;
-      skills: typeof skills;
-      userProfile: typeof userProfile;
-      users: typeof users;
-      usersCVs: typeof usersCVs;
-    };
+    resources: typeof resources;
   }
 }
