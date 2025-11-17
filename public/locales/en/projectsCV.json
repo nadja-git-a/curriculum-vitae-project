@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "addProject": "Add project"
+  },
+  "fields": {
+    "name": "Name",
+    "domain": "Domain",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "environment": "Environment",
+    "responsibilities": "Responsibilities"
+  }
+}
