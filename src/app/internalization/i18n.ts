@@ -21,8 +21,8 @@ i18n
   .use(initReactI18next)
   .use(
     resourcesToBackend((lang: Language, ns: Namespace) =>
-      fetch(`/locales/${lang}/${ns}.json`).then((res) => res.json()),
-    ),
+      fetch(`/locales/${lang}/${ns}.json`).then((res) => res.json())
+    )
   )
   .init({
     lng: "en",
