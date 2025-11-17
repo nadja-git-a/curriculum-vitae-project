@@ -1,10 +1,7 @@
-import { ThemeProvider } from "@emotion/react";
 import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { App } from "app/App";
-
-import { theme } from "./app/theme/theme";
 
 import "@fontsource/nunito-sans/300.css";
 import "@fontsource/nunito-sans/400.css";
@@ -20,8 +17,6 @@ if (!rootElement) {
 
 ReactDOM.createRoot(rootElement as HTMLElement).render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <App />
   </React.StrictMode>
 );
