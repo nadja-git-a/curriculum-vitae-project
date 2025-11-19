@@ -7,21 +7,15 @@ export function AuthSwitch() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const isLogin = location.pathname.includes("/auth/login");
-  const isSignup = location.pathname.includes("/auth/signup");
-
-  const value = isLogin ? 0 : isSignup ? 1 : false;
-
-  const handleChange = (_: React.SyntheticEvent, newValue: number) => {
-    if (newValue === 0) navigate("/auth/login");
-    if (newValue === 1) navigate("/auth/signup");
+  const handleChange = (_: React.SyntheticEvent, newValue: string) => {
+    navigate(newValue);
   };
 
   return (
     <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
-      <Tabs value={value} onChange={handleChange} centered>
-        <Tab label={t("actions.login")} />
-        <Tab label={t("actions.signUp")} />
+      <Tabs value={location.pathname} onChange={handleChange} centered>
+        <Tab label={t("actions.login")} value="/auth/login" />
+        <Tab label={t("actions.signUp")} value="/auth/signup" />
       </Tabs>
     </Box>
   );

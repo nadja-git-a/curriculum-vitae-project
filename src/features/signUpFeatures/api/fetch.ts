@@ -25,12 +25,12 @@ type SignUpGraphQLData = {
 };
 
 export async function signupRequest(auth: AuthInput): Promise<AuthResult> {
-  const res = await apiFetch<GraphQLResponse<SignUpGraphQLData>>("/graphql", {
+  const res = await apiFetch<GraphQLResponse<SignUpGraphQLData>>("", {
     method: "POST",
-    body: JSON.stringify({
+    data: {
       query: SIGNUP_MUTATION,
       variables: { auth },
-    }),
+    },
   });
 
   if (res.errors?.length) {

@@ -1,6 +1,7 @@
+import { Box, CircularProgress } from "@mui/material";
 import type { ReactElement } from "react";
-import { lazy } from "react";
-import { Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { createBrowserRouter, Route, RouterProvider, Routes } from "react-router-dom";
 
 import { RouteGuard } from "./RouterGuard";
 
@@ -22,16 +23,30 @@ export const ROUTES: AppRoute[] = [
   },
 ];
 
+const router = createBrowserRouter(
+  ROUTES.map(({ path, element, allowed }) => ({
+    path,
+    element: (
+      <Suspense
+        fallback={
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100vh",
+            }}
+          >
+            <CircularProgress />
+          </Box>
+        }
+      >
+        <RouteGuard element={element} allowed={allowed} />
+      </Suspense>
+    ),
+  }))
+);
+
 export function AppRouter() {
-  return (
-    <Routes>
-      {ROUTES.map(({ path, element }) => (
-        <Route
-          key={path}
-          path={path}
-          element={<RouteGuard element={element} allowed={"guest"} />}
-        />
-      ))}
-    </Routes>
-  );
+  return <RouterProvider router={router} />;
 }
