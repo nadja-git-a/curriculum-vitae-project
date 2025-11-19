@@ -1,7 +1,7 @@
 import { Box, CircularProgress } from "@mui/material";
 import type { ReactElement } from "react";
 import { lazy, Suspense } from "react";
-import { createBrowserRouter, Route, RouterProvider, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { RouteGuard } from "./RouterGuard";
 
