@@ -15,7 +15,8 @@ type Namespace =
   | "skills"
   | "userProfile"
   | "users"
-  | "usersCVs";
+  | "usersCVs"
+  | "auth";
 
 i18n
   .use(initReactI18next)

@@ -2,5 +2,10 @@
   "welcomeMessage": "Зарегистрируйтесь",
   "signUpSubtitle": "Добро пожаловать! Создайте аккаунт, чтобы продолжить",
   "haveAccountMessage": "У МЕНЯ ЕСТЬ АККАУНТ",
-  "createAccount": "СОЗДАТЬ АККАУНТ"
+  "createAccount": "СОЗДАТЬ АККАУНТ",
+  "errors": {
+    "invalidEmail": "Введите корректный email",
+    "minPassword": "Минимум 6 символов",
+    "passwordsMustMatch": "Пароли должны совпадать"
+  }
 }

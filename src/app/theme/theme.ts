@@ -17,7 +17,7 @@ export const theme = createTheme({
     },
     background: {
       default: "#F5F7FF",
-      paper: "#FFFFFF",
+      paper: "#3e8cff",
     },
     text: {
       primary: "#1E293B",
@@ -95,6 +95,6 @@ export const theme = createTheme({
   },
   spacing: 4,
   shape: {
-    borderRadius: 16,
+    borderRadius: 8,
   },
 });
