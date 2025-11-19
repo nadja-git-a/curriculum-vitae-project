@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@emotion/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Outlet } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import { AppRouter } from "./routes/AppRouter.tsx";
 import { theme } from "./theme/theme.ts";
