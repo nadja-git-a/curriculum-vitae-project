@@ -13,6 +13,7 @@
     "signUp": "Sign up",
     "email": "Email",
     "password": "Password",
+    "repeatPassword": "Confirm your password",
     "save": "Save",
     "cancel": "Cancel",
     "upload": "Upload"
