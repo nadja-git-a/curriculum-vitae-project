@@ -16,6 +16,8 @@
     "repeatPassword": "Confirm your password",
     "save": "Save",
     "cancel": "Cancel",
-    "upload": "Upload"
+    "upload": "Upload",
+    "unknownError": "Unknown error: something went wrong",
+    "success": "Success!"
   }
 }

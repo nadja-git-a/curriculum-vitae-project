@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-import type { AuthResult } from "features/signUpFeatures/model/types";
+import type { AuthResult } from "features/authFeatures/model/types";
 
 interface AuthState {
   user: AuthResult["user"] | null;

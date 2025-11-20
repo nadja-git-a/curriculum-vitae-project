@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RouteGuard } from "./RouterGuard";
 
 const SignUpPage = lazy(() => import("pages/SignUpPage/ui/SignUpPage"));
+const LogInPage = lazy(() => import("pages/LogInPage/ui/LogInPage"));
 
 type Allowed = "guest" | "user";
 
@@ -17,8 +18,18 @@ interface AppRoute {
 
 export const ROUTES: AppRoute[] = [
   {
+    path: "/",
+    element: <LogInPage />,
+    allowed: "guest",
+  },
+  {
     path: "/auth/signup",
     element: <SignUpPage />,
+    allowed: "guest",
+  },
+  {
+    path: "/auth/login",
+    element: <LogInPage />,
     allowed: "guest",
   },
 ];

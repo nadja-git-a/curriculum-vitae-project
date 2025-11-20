@@ -6,34 +6,32 @@ import { useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-import { useSignup } from "features/signUpFeatures/api/query";
-import type { AuthInput } from "features/signUpFeatures/model/types";
+import { logInSchema, type LogInType } from "./schema/schema";
+import { useLogin } from "../../api/loginQuery";
 
-import { signUpSchema, type SignUpType } from "./schema/schema";
-
-export function SignUpForm() {
+export function LogInForm() {
   const [showPassword, setShowPassword] = useState(false);
 
-  const { t } = useTranslation(["signUp", "common"]);
+  const { mutate: login, isPending } = useLogin();
 
-  const { mutate: signup, isPending, error } = useSignup();
+  const { t } = useTranslation(["login", "common", "errors"]);
+  const { t: tErrors } = useTranslation("errors");
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<SignUpType>({
-    resolver: zodResolver(signUpSchema(t)),
+  } = useForm<LogInType>({
+    resolver: zodResolver(logInSchema(tErrors)),
     defaultValues: {
       email: "",
       password: "",
-      repeatPassword: "",
     },
   });
 
-  const onSubmit: SubmitHandler<SignUpType> = ({ email, password }) => {
-    const data: AuthInput = { email, password };
-    signup(data);
+  const onSubmit: SubmitHandler<LogInType> = ({ email, password }) => {
+    const data: LogInType = { email, password };
+    login(data);
   };
 
   return (
@@ -56,7 +54,7 @@ export function SignUpForm() {
           textAlign: "center",
         })}
       >
-        {t("signUpSubtitle")}
+        {t("logInSubtitle")}
       </Typography>
 
       <TextField
@@ -89,20 +87,6 @@ export function SignUpForm() {
         }}
       />
 
-      <TextField
-        {...register("repeatPassword")}
-        error={!!errors.repeatPassword}
-        helperText={errors.repeatPassword?.message}
-        type="password"
-        label={t("common:actions.repeatPassword")}
-      />
-
-      {error && (
-        <Typography variant="body2" color="error">
-          {(error as Error).message}
-        </Typography>
-      )}
-
       <Button
         type="submit"
         variant="contained"
@@ -112,7 +96,7 @@ export function SignUpForm() {
           marginTop: theme.spacing(1),
         })}
       >
-        {t("createAccount")}
+        {t("common:actions.login")}
       </Button>
 
       <Button
@@ -122,7 +106,7 @@ export function SignUpForm() {
           marginTop: theme.spacing(0.5),
         })}
       >
-        {t("haveAccountMessage")}
+        {t("login:forgotPassword")}
       </Button>
     </Box>
   );
