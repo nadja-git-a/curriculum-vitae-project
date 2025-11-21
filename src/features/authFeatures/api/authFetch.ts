@@ -12,7 +12,7 @@ export async function graphqlRequest<TData, TVars = unknown>(
   query: string,
   variables?: TVars
 ): Promise<TData> {
-  const res = await apiFetch<GraphQLResponse<TData>>("", {
+  const res = await apiFetch<GraphQLResponse<TData>>("/graphql", {
     method: "POST",
     data: {
       query,

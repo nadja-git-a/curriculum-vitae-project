@@ -12,8 +12,8 @@ export function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
-        <AppRouter />
         <ToastContainer />
+        <AppRouter />
       </ThemeProvider>
     </QueryClientProvider>
   );

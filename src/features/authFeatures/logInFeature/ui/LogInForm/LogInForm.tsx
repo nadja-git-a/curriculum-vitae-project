@@ -91,7 +91,7 @@ export function LogInForm() {
         type="submit"
         variant="contained"
         fullWidth
-        disabled={isPending}
+        loading={isPending}
         sx={(theme) => ({
           marginTop: theme.spacing(1),
         })}
