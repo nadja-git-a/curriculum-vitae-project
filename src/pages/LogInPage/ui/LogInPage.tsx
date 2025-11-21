@@ -1,10 +1,10 @@
 import { Box, Grid } from "@mui/material";
 
 import { AuthSwitch } from "features/authFeatures/AuthSwitch/AuthSwitch";
-import { SignUpForm } from "features/authFeatures/signUpFeatures/ui/SignUpForm/SignUpForm";
+import { LogInForm } from "features/authFeatures/logInFeature/ui/LogInForm/LogInForm";
 import { WelcomeBanner } from "shared/ui/WelcomeBanner/WelcomeBanner";
 
-export default function SignUpPage() {
+export default function LogInPage() {
   return (
     <Box
       sx={(theme) => ({
@@ -50,7 +50,7 @@ export default function SignUpPage() {
             justifyContent: "center",
           }}
         >
-          <SignUpForm />
+          <LogInForm />
         </Grid>
       </Grid>
     </Box>

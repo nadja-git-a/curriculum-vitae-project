@@ -5,25 +5,29 @@ import { Box, Button, IconButton, InputAdornment, TextField, Typography } from "
 import { useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
-import { useSignup } from "features/signUpFeatures/api/query";
-import type { AuthInput } from "features/signUpFeatures/model/types";
+import type { AuthInput } from "features/authFeatures/model/types";
 
 import { signUpSchema, type SignUpType } from "./schema/schema";
+import { useSignup } from "../../api/signupQuery";
 
 export function SignUpForm() {
   const [showPassword, setShowPassword] = useState(false);
 
-  const { t } = useTranslation(["signUp", "common"]);
+  const { t } = useTranslation(["signUp", "common", "errors"]);
+  const { t: tErrors } = useTranslation("errors");
 
-  const { mutate: signup, isPending, error } = useSignup();
+  const navigate = useNavigate();
+
+  const { mutate: signup, isPending } = useSignup();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<SignUpType>({
-    resolver: zodResolver(signUpSchema(t)),
+    resolver: zodResolver(signUpSchema(tErrors)),
     defaultValues: {
       email: "",
       password: "",
@@ -97,17 +101,11 @@ export function SignUpForm() {
         label={t("common:actions.repeatPassword")}
       />
 
-      {error && (
-        <Typography variant="body2" color="error">
-          {(error as Error).message}
-        </Typography>
-      )}
-
       <Button
         type="submit"
         variant="contained"
         fullWidth
-        disabled={isPending}
+        loading={isPending}
         sx={(theme) => ({
           marginTop: theme.spacing(1),
         })}
@@ -121,6 +119,7 @@ export function SignUpForm() {
         sx={(theme) => ({
           marginTop: theme.spacing(0.5),
         })}
+        onClick={() => navigate("/auth/login")}
       >
         {t("haveAccountMessage")}
       </Button>

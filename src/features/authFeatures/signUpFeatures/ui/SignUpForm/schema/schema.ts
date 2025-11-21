@@ -1,7 +1,7 @@
 import { type TFunction } from "i18next";
 import { z } from "zod/v4";
 
-export const signUpSchema = (t: TFunction<"signUp">) =>
+export const signUpSchema = (t: TFunction<"errors">) =>
   z
     .object({
       email: z.email(t("errors.invalidEmail")),

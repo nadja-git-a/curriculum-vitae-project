@@ -34,7 +34,7 @@ api.interceptors.response.use(
         return api.request(error.config);
       } catch {
         clearAuth();
-        window.location.href = "/auth/signup";
+        window.location.href = "/auth/login";
       }
     }
 
