@@ -10,14 +10,14 @@ export const theme = createTheme({
       contrastText: "#FFFFFF",
     },
     secondary: {
-      main: "#7C3AED",
+      main: "#3e8cff",
       light: "#EEE5FF",
       dark: "#5B21B6",
       contrastText: "#FFFFFF",
     },
     background: {
       default: "#F5F7FF",
-      paper: "#3e8cff",
+      paper: "#FFFFFF",
     },
     text: {
       primary: "#1E293B",

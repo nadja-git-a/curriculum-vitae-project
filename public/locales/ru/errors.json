@@ -2,6 +2,8 @@
   "errors": {
     "invalidEmail": "Введите корректный email",
     "minPassword": "Минимум 6 символов",
-    "passwordsMustMatch": "Пароли должны совпадать"
+    "passwordsMustMatch": "Пароли должны совпадать",
+    "firstNameRequired": "Имя обязательно",
+    "lastNameRequired": "Фамилия обязательна"
   }
 }

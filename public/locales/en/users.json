@@ -5,14 +5,21 @@
     "languages": "Languages",
     "cvs": "CVs"
   },
-  "search": {
-    "placeholder": "Search"
-  },
   "table": {
     "firstName": "First Name",
     "lastName": "Last Name",
     "email": "Email",
     "department": "Department",
     "position": "Position"
+  },
+  "menu": {
+    "profile": "Profile",
+    "updateUser": "Edit",
+    "deleteUser": "Delete"
+  },
+  "roles": {
+    "role": "Role",
+    "employee": "Employee",
+    "admin": "Admin"
   }
 }

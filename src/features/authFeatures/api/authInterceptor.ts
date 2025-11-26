@@ -1,24 +1,6 @@
 import { useAuthStore } from "app/store/authStore";
 import { api } from "shared/api";
-
-import type { AuthResult } from "../model/types";
-
-const REFRESH_TOKEN_MUTATION = `
-  mutation UpdateToken($refresh_token: String!) {
-    updateToken(refresh_token: $refresh_token) {
-      access_token
-      refresh_token
-    }
-  }
-`;
-export async function refreshTokenRequest(refreshToken: string): Promise<AuthResult> {
-  const response = await api.post("", {
-    query: REFRESH_TOKEN_MUTATION,
-    variables: { refresh_token: refreshToken },
-  });
-
-  return response.data.data.updateToken;
-}
+import { refreshTokenRequest } from "shared/api/refreshToken";
 
 api.interceptors.response.use(
   (response) => response,

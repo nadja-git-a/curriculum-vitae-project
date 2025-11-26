@@ -18,7 +18,7 @@ export function RouteGuard({ element, allowed }: RouteGuardProps) {
   }
 
   if (allowed === "guest" && accessToken) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/users" replace />;
   }
 
   return element;
