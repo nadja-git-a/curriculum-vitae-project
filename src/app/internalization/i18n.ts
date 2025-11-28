@@ -17,7 +17,8 @@ type Namespace =
   | "users"
   | "usersCVs"
   | "auth"
-  | "errors";
+  | "errors"
+  | "positions";
 
 i18n
   .use(initReactI18next)

@@ -4,5 +4,10 @@ export const AUTH_FIELDS = `
   user {
     id
     email
+    profile {
+    full_name
+    avatar
+    }
+    role
   }
 `;

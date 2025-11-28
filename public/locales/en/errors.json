@@ -2,6 +2,7 @@
   "errors": {
     "invalidEmail": "Enter a valid email",
     "minPassword": "Minimum 6 characters",
-    "passwordsMustMatch": "Passwords must match"
+    "passwordsMustMatch": "Passwords must match",
+    "requiredField": "This field is required"
   }
 }

@@ -1,0 +1,20 @@
+{
+  "noPosition": "No position",
+  "noDepartment": "No department",
+
+  "positions": {
+    "systemsAnalyst": "Systems Analyst",
+    "networkEngineer": "Network Engineer",
+    "databaseAdministrator": "Database Administrator",
+    "uxDesigner": "UX Designer",
+    "supportSpecialist": "Support Specialist",
+    "dataAnalyst": "Data Analyst",
+    "dataArchitect": "Data Architect",
+    "devOpsEngineer": "DevOps Engineer",
+    "qaEngineer": "QA Engineer",
+    "cloudEngineer": "Cloud Engineer",
+    "projectManager": "Project Manager",
+    "aqaEngineer": "AQA Engineer",
+    "softwareEngineer": "Software Engineer"
+  }
+}

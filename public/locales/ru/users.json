@@ -5,14 +5,21 @@
     "languages": "Языки",
     "cvs": "Резюме"
   },
-  "search": {
-    "placeholder": "Поиск"
-  },
   "table": {
     "firstName": "Имя",
     "lastName": "Фамилия",
     "email": "Почта",
     "department": "Отдел",
     "position": "Должность"
+  },
+  "menu": {
+    "profile": "Профиль",
+    "updateUser": "Редактировать",
+    "deleteUser": "Удалить"
+  },
+  "roles": {
+    "role": "Роль",
+    "employee": "Сотрудник",
+    "admin": "Админ"
   }
 }

@@ -8,7 +8,7 @@ export function WelcomeBanner() {
   return (
     <Box
       sx={(theme) => ({
-        bgcolor: theme.palette.background.paper,
+        bgcolor: theme.palette.secondary.main,
         borderRadius: theme.shape.borderRadius,
         color: theme.palette.primary.contrastText,
         p: theme.spacing(6),

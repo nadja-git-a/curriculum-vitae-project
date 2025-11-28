@@ -1,0 +1,20 @@
+{
+  "noPosition": "Без позиции",
+  "noDepartment": "Без отдела",
+
+  "positions": {
+    "systemsAnalyst": "Системный аналитик",
+    "networkEngineer": "Сетевой инженер",
+    "databaseAdministrator": "Администратор баз данных",
+    "uxDesigner": "UX дизайнер",
+    "supportSpecialist": "Специалист поддержки",
+    "dataAnalyst": "Аналитик данных",
+    "dataArchitect": "Архитектор данных",
+    "devOpsEngineer": "DevOps инженер",
+    "qaEngineer": "QA инженер",
+    "cloudEngineer": "Облачный инженер",
+    "projectManager": "Проектный менеджер",
+    "aqaEngineer": "AQA инженер",
+    "softwareEngineer": "Software инженер"
+  }
+}

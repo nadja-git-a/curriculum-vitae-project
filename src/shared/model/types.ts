@@ -1,8 +1,8 @@
-type UserRole = "Employee" | "Admin";
+export type UserRole = "Employee" | "Admin";
 
-type Mastery = "Novice" | "Advanced" | "Competent" | "Proficient" | "Expert";
+export type Mastery = "Novice" | "Advanced" | "Competent" | "Proficient" | "Expert";
 
-type Proficiency = "A1" | "A2" | "B1" | "B2" | "C1" | "C2" | "Native";
+export type Proficiency = "A1" | "A2" | "B1" | "B2" | "C1" | "C2" | "Native";
 
 export interface BaseEntity {
   id: string;

@@ -26,6 +26,7 @@ const resources = {
   usersCVs,
   auth,
   errors,
+  positions,
 };
 
 declare module "i18next" {

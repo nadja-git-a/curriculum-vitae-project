@@ -5,6 +5,7 @@ import { Box, Button, IconButton, InputAdornment, TextField, Typography } from "
 import { useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 import { logInSchema, type LogInType } from "./schema/schema";
 import { useLogin } from "../../api/loginQuery";
@@ -13,6 +14,7 @@ export function LogInForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   const { mutate: login, isPending } = useLogin();
+  const navigate = useNavigate();
 
   const { t } = useTranslation(["login", "common", "errors"]);
   const { t: tErrors } = useTranslation("errors");
@@ -32,6 +34,7 @@ export function LogInForm() {
   const onSubmit: SubmitHandler<LogInType> = ({ email, password }) => {
     const data: LogInType = { email, password };
     login(data);
+    navigate("/users");
   };
 
   return (

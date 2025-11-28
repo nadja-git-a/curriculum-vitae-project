@@ -1,12 +1,8 @@
 import i18n from "app/internalization/i18n";
 import { apiFetch } from "shared/api";
+import type { GraphQLResponse } from "shared/api/types";
 
 const t = i18n.getFixedT(null, "common");
-
-type GraphQLResponse<T> = {
-  data?: T;
-  errors?: { message: string }[];
-};
 
 export async function graphqlRequest<TData, TVars = unknown>(
   query: string,

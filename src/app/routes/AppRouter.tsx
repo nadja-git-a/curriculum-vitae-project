@@ -7,6 +7,7 @@ import { RouteGuard } from "./RouterGuard";
 
 const SignUpPage = lazy(() => import("pages/SignUpPage/ui/SignUpPage"));
 const LogInPage = lazy(() => import("pages/LogInPage/ui/LogInPage"));
+const UsersPage = lazy(() => import("pages/UsersPage/UsersPage"));
 
 type Allowed = "guest" | "user";
 
@@ -31,6 +32,11 @@ export const ROUTES: AppRoute[] = [
     path: "/auth/login",
     element: <LogInPage />,
     allowed: "guest",
+  },
+  {
+    path: "/users",
+    element: <UsersPage />,
+    allowed: "user",
   },
 ];
 
