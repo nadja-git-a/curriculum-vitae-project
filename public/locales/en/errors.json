@@ -3,7 +3,6 @@
     "invalidEmail": "Enter a valid email",
     "minPassword": "Minimum 6 characters",
     "passwordsMustMatch": "Passwords must match",
-    "firstNameRequired": "First name is required",
-    "lastNameRequired": "Last name is required"
+    "requiredField": "This field is required"
   }
 }

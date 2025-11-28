@@ -1,5 +1,7 @@
 {
   "noPosition": "No position",
+  "noDepartment": "No department",
+
   "positions": {
     "systemsAnalyst": "Systems Analyst",
     "networkEngineer": "Network Engineer",

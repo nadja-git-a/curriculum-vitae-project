@@ -1,5 +1,7 @@
 {
   "noPosition": "Без позиции",
+  "noDepartment": "Без отдела",
+
   "positions": {
     "systemsAnalyst": "Системный аналитик",
     "networkEngineer": "Сетевой инженер",

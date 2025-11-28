@@ -20,12 +20,6 @@ const UPDATE_USER = `
   mutation UpdateUser($user: UpdateUserInput!) {
     updateUser(user: $user) {
       id
-      email
-      profile {
-        avatar
-        first_name
-        last_name
-      }
       position_name
       department_name
       role

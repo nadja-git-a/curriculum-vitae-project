@@ -211,6 +211,7 @@ export function UsersTable({ search }: { search: string }) {
         </MenuItem>
 
         <MenuItem
+          disabled={!isAdmin}
           onClick={() => {
             if (menuUser) {
               removeUser(menuUser.id);
