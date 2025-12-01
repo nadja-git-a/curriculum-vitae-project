@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
+import i18n from "app/internalization/i18n";
 import { useAuthStore } from "app/store/authStore";
 import type { AuthResult } from "features/authFeatures/model/types";
 import { useDepartments } from "features/UsersTableFeature/api/updateUser/departmentFetch";
@@ -72,7 +73,7 @@ export function UserProfile({ id }: UserProfileType) {
   if (!data?.profile.created_at) return;
   const date = new Date(Number(data.profile.created_at));
 
-  const formattedDate = new Intl.DateTimeFormat("en-US", {
+  const formattedDate = new Intl.DateTimeFormat(i18n.language, {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -247,7 +248,7 @@ export function UserProfile({ id }: UserProfileType) {
                 {t("userProfile:updateButton")}
               </Button>
             ) : (
-              <span></span>
+              <span />
             )}
           </Box>
         </Box>

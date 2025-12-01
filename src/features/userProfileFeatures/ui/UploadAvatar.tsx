@@ -2,11 +2,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Avatar, Box, Button, IconButton } from "@mui/material";
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { toast } from "react-toastify";
 
 import { useAuthStore } from "app/store/authStore";
 import type { User } from "shared/model/types";
 
+import { readFile } from "./manageFile/readFile";
 import { useDeleteAvatar } from "../api/deleteAvatarQuery";
 import { useUploadAvatar } from "../api/uploadAvatarQuery";
 
@@ -15,7 +15,8 @@ interface UploadAvatar {
 }
 
 export function UploadAvatar({ user }: UploadAvatar) {
-  const { t } = useTranslation(["userProfile", "errors"]);
+  const { t } = useTranslation(["userProfile"]);
+  const { t: tErrors } = useTranslation(["errors"]);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const userStore = useAuthStore((store) => store.user);
@@ -64,36 +65,20 @@ export function UploadAvatar({ user }: UploadAvatar) {
     deleteAvatar(user.id);
   };
 
-  const handleFile = (file: File) => {
-    if (!file || !user?.id) return;
+  const handleFile = async (file: File) => {
+    if (!user?.id) return;
 
-    const allowedTypes = ["image/png", "image/jpeg", "image/jpg", "image/gif"];
-    if (!allowedTypes.includes(file.type)) {
-      toast.error(t("errors:errors.invalidFormat"));
-      return;
-    }
+    const processedFile = await readFile(file, tErrors);
+    if (!processedFile) return;
 
-    if (file.size > 500 * 1024) {
-      toast.error(t("errors:errors.fileTooLarge"));
-      return;
-    }
-
-    const reader = new FileReader();
-
-    reader.onloadend = () => {
-      const result = reader.result?.toString() ?? "";
-      const base64 = result;
-
-      uploadAvatar({
-        userId: user.id,
-        base64,
-        size: file.size,
-        type: file.type,
-      });
-    };
-
-    reader.readAsDataURL(file);
+    uploadAvatar({
+      userId: user.id,
+      base64: processedFile.base64,
+      size: processedFile.size,
+      type: processedFile.type,
+    });
   };
+
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {

@@ -48,8 +48,8 @@ export function AppNavigation() {
         color: "primary.contrastText",
         borderRadius: 2,
         gap: 1,
-        transition: " all 0.35s cubic-bezier(.23, 1, .32, 1)",
         overflow: "hidden",
+        transition: (theme) => theme.transitions.custom,
       }}
     >
       <List

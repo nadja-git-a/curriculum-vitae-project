@@ -1,5 +1,15 @@
 import { createTheme } from "@mui/material/styles";
 
+declare module "@mui/material/styles" {
+  interface Transitions {
+    custom: string;
+  }
+
+  interface TransitionsOptions {
+    custom?: string;
+  }
+}
+
 export const theme = createTheme({
   palette: {
     mode: "light",
@@ -93,8 +103,14 @@ export const theme = createTheme({
       lineHeight: 1.4,
     },
   },
+
   spacing: 4,
+
   shape: {
     borderRadius: 8,
+  },
+
+  transitions: {
+    custom: "all 350ms cubic-bezier(.23, 1, .32, 1)",
   },
 });
