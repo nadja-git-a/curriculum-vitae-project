@@ -3,6 +3,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import {
   Avatar,
   Box,
+  Button,
   IconButton,
   List,
   ListItemButton,
@@ -47,8 +48,8 @@ export function AppNavigation() {
         color: "primary.contrastText",
         borderRadius: 2,
         gap: 1,
-        transition: "width 0.2s ease",
         overflow: "hidden",
+        transition: (theme) => theme.transitions.custom,
       }}
     >
       <List
@@ -117,23 +118,25 @@ export function AppNavigation() {
             justifyContent: expanded ? "flex-start" : "center",
           }}
         >
-          <Avatar
-            src={user?.profile.avatar ?? undefined}
-            sx={{
-              width: 36,
-              height: 36,
-              bgcolor: user?.profile.avatar ? "transparent" : "secondary.main",
-              fontSize: 14,
-              fontWeight: 700,
-            }}
-          >
-            {initials}
-          </Avatar>
-          {expanded && (
-            <Typography noWrap variant="body2" sx={{ maxWidth: 150 }}>
-              {fullNameOrEmail}
-            </Typography>
-          )}
+          <Button variant="text" onClick={() => navigate(`/user/${user?.id}/profile`)}>
+            <Avatar
+              src={user?.profile.avatar ?? undefined}
+              sx={{
+                width: 36,
+                height: 36,
+                bgcolor: user?.profile.avatar ? "transparent" : "secondary.main",
+                fontSize: 14,
+                fontWeight: 700,
+              }}
+            >
+              {initials}
+            </Avatar>
+            {expanded && (
+              <Typography color="white" noWrap variant="body2" sx={{ maxWidth: 150, p: 2 }}>
+                {fullNameOrEmail}
+              </Typography>
+            )}
+          </Button>
         </Box>
 
         <Box

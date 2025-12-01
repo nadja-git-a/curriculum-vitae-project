@@ -17,7 +17,7 @@ interface Navigators {
 export const navigators: Navigators[] = [
   {
     icon: <PeopleIcon />,
-    link: "/employees",
+    link: "/users",
     translation: "navigation.employees",
   },
   {

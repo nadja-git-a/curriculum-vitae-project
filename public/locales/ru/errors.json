@@ -3,6 +3,8 @@
     "invalidEmail": "Введите корректный email",
     "minPassword": "Минимум 6 символов",
     "passwordsMustMatch": "Пароли должны совпадать",
-    "requiredField": "Это поле обязательно"
+    "requiredField": "Это поле обязательно",
+    "fileTooLarge": "Файл слишком большой. Максимальный размер — 500 KB.",
+    "invalidFormat": "Неподдерживаемый формат файла. Разрешены: PNG, JPG, JPEG, GIF."
   }
 }
