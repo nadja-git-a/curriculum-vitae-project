@@ -3,6 +3,8 @@
     "invalidEmail": "Enter a valid email",
     "minPassword": "Minimum 6 characters",
     "passwordsMustMatch": "Passwords must match",
-    "requiredField": "This field is required"
+    "requiredField": "This field is required",
+    "fileTooLarge": "The file is too large. Maximum size is 500 KB.",
+    "invalidFormat": "Unsupported file type. Allowed: PNG, JPG, JPEG, GIF."
   }
 }

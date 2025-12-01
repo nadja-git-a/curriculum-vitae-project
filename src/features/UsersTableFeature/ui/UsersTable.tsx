@@ -29,7 +29,7 @@ import { useDeleteUser } from "../api/updateUser/deleteUserFetch";
 import { useUsers } from "../api/users/usersQuery";
 import type { HeadCells, Order, SortingField } from "../model/types";
 
-import "../api/users/usersInterceptor";
+import "../../../shared/api/refreshInterceptor";
 
 export const headCells: HeadCells[] = [
   { id: "avatar" },
@@ -174,7 +174,7 @@ export function UsersTable({ search }: { search: string }) {
                       <MoreVertIcon />
                     </IconButton>
                   ) : (
-                    <IconButton size="small" onClick={() => navigate("/user")}>
+                    <IconButton size="small" onClick={() => navigate(`/user/${row.id}/profile`)}>
                       <ChevronRightIcon />
                     </IconButton>
                   )}
@@ -194,7 +194,7 @@ export function UsersTable({ search }: { search: string }) {
       >
         <MenuItem
           onClick={() => {
-            navigate(`/user/${menuUser?.id}`);
+            navigate(`/user/${menuUser?.id}/profile`);
             handleMenuClose();
           }}
         >
