@@ -2,7 +2,6 @@ import { Box, CircularProgress } from "@mui/material";
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { AppWrapperPage } from "pages/AppWrapperPage/AppWrapperPage";
 import ProfileWrapper from "features/profileNavigationFeatures/ui/ProfileWrapper";
 
 import { RouteGuard } from "./RouterGuard";
@@ -13,6 +12,7 @@ const UsersPage = lazy(() => import("pages/UsersPage/UsersPage"));
 const UserProfilePage = lazy(() => import("pages/UserProfilePage/UserProfilePage"));
 const UserSkillsPage = lazy(() => import("pages/UserSkillsPage/UserSkillsPage"));
 const ProfileSkillPage = lazy(() => import("pages/ProfileSkillPage/ProfileSkillPage"));
+const AppWrapperPage = lazy(() => import("pages/AppWrapperPage/AppWrapperPage"));
 
 const router = createBrowserRouter([
   {
