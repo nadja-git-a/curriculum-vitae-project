@@ -2,7 +2,7 @@ import { Box, CircularProgress } from "@mui/material";
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import ProfileWrapper from "features/profileNavigationFeatures/ui/ProfileWraper";
+import ProfileWrapper from "features/profileNavigationFeatures/ui/ProfileWrapper";
 import { AppWrapper } from "shared/ui/AppWrapper/AppWrapper";
 
 import { RouteGuard } from "./RouterGuard";
