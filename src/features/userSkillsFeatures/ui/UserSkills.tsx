@@ -50,8 +50,15 @@ export function UserSkills() {
   } | null>(null);
 
   const skillIdByName = useMemo(() => {
-    if (!allSkills) return new Map<string, string>();
-    return new Map(allSkills.map((s) => [s.name, s.id]));
+    const skills = new Map<string, string>();
+
+    if (!allSkills) return skills;
+
+    allSkills.forEach((s) => {
+      skills.set(s.name, s.id);
+    });
+
+    return skills;
   }, [allSkills]);
 
   const [isDeleteMode, setIsDeleteMode] = useState(false);

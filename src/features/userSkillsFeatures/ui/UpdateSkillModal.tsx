@@ -84,7 +84,7 @@ export function UpdateSkillModal({ open, onClose, skillId, mastery }: SkillModal
             bgcolor: "background.paper",
             color: "text.secondary",
             fontWeight: 600,
-            fontSize: "0.75rem",
+            fontSize: "theme.typography.h3.fontSize",
           }}
         >
           {group.categoryName}

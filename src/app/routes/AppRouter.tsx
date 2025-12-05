@@ -3,6 +3,9 @@ import type { ReactElement } from "react";
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import ProfileWrapper from "features/profileNavigationFeatures/ui/ProfileWraper";
+import { AppWrapper } from "shared/ui/AppWrapper/AppWrapper";
+
 import { RouteGuard } from "./RouterGuard";
 
 const SignUpPage = lazy(() => import("pages/SignUpPage/ui/SignUpPage"));
@@ -20,47 +23,56 @@ interface AppRoute {
   allowed: Allowed;
 }
 
-export const ROUTES: AppRoute[] = [
+// export const ROUTES: AppRoute[] = [
+//   {
+//     path: "/",
+//     element: <LogInPage />,
+//     allowed: "guest",
+//   },
+//   {
+//     path: "/auth/signup",
+//     element: <SignUpPage />,
+//     allowed: "guest",
+//   },
+//   {
+//     path: "/auth/login",
+//     element: <LogInPage />,
+//     allowed: "guest",
+//   },
+//   {
+//     path: "/users",
+//     element: <UsersPage />,
+//     allowed: "user",
+//   },
+//   {
+//     path: "/user/:id/profile",
+//     element: <UserProfilePage />,
+//     allowed: "user",
+//   },
+//   {
+//     path: "/skills",
+//     element: <UserSkillsPage />,
+//     allowed: "user",
+//   },
+//   {
+//     path: "/user/:userId/skills",
+//     element: <ProfileSkillPage />,
+//     allowed: "user",
+//   },
+// ];
+
+const router = createBrowserRouter([
   {
-    path: "/",
-    element: <LogInPage />,
-    allowed: "guest",
+    path: "/auth/login",
+    element: <RouteGuard element={<LogInPage />} allowed="guest"></RouteGuard>,
   },
   {
     path: "/auth/signup",
-    element: <SignUpPage />,
-    allowed: "guest",
+    element: <RouteGuard element={<SignUpPage />} allowed="guest"></RouteGuard>,
   },
-  {
-    path: "/auth/login",
-    element: <LogInPage />,
-    allowed: "guest",
-  },
-  {
-    path: "/users",
-    element: <UsersPage />,
-    allowed: "user",
-  },
-  {
-    path: "/user/:id/profile",
-    element: <UserProfilePage />,
-    allowed: "user",
-  },
-  {
-    path: "/skills",
-    element: <UserSkillsPage />,
-    allowed: "user",
-  },
-  {
-    path: "/user/:userId/skills",
-    element: <ProfileSkillPage />,
-    allowed: "user",
-  },
-];
 
-const router = createBrowserRouter(
-  ROUTES.map(({ path, element, allowed }) => ({
-    path,
+  {
+    path: "/",
     element: (
       <Suspense
         fallback={
@@ -76,11 +88,24 @@ const router = createBrowserRouter(
           </Box>
         }
       >
-        <RouteGuard element={element} allowed={allowed} />
+        <RouteGuard element={<AppWrapper />} allowed="user"></RouteGuard>
       </Suspense>
     ),
-  }))
-);
+    children: [
+      { path: "users", element: <UsersPage /> },
+      { path: "skills", element: <UserSkillsPage /> },
+
+      {
+        path: "user/:id",
+        element: <ProfileWrapper />,
+        children: [
+          { path: "profile", element: <UserProfilePage /> },
+          { path: "skills", element: <ProfileSkillPage /> },
+        ],
+      },
+    ],
+  },
+]);
 
 export function AppRouter() {
   return <RouterProvider router={router} />;

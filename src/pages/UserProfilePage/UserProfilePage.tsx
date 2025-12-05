@@ -1,8 +1,6 @@
 import { Box } from "@mui/material";
 import { Navigate, useParams } from "react-router-dom";
 
-import { AppNavigation } from "features/appNavigationFeatures/ui/AppNavigation";
-import { ProfileNavigation } from "features/profileNavigationFeatures/ui/ProfileNavigation";
 import { UserProfile } from "features/userProfileFeatures/ui/UserProfile";
 
 export default function UserProfilePage() {
@@ -13,26 +11,8 @@ export default function UserProfilePage() {
   }
 
   return (
-    <Box sx={{ display: "flex", width: "100%", height: "100vh" }}>
-      <Box
-        sx={{
-          p: 2,
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <AppNavigation />
-      </Box>
-
-      <Box sx={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
-        <Box>
-          <ProfileNavigation />
-        </Box>
-
-        <Box sx={{ flex: 1, overflow: "auto", p: 3 }}>
-          <UserProfile id={id} />
-        </Box>
-      </Box>
+    <Box sx={{ m: 5 }}>
+      <UserProfile id={id} />
     </Box>
   );
 }
