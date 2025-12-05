@@ -62,7 +62,7 @@ export function AppNavigation() {
       >
         {navigators.map((nav) => (
           <ListItemButton
-            key={nav.link}
+            key={nav.id}
             onClick={() => navigate(nav.link)}
             sx={{
               borderRadius: 999,

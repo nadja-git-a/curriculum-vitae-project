@@ -1,16 +1,11 @@
 {
+  "title": "Skill",
   "categories": {
     "programmingLanguages": "Programming languages"
   },
-  "mastery": {
-    "novice": "Novice",
-    "advanced": "Advanced",
-    "competent": "Competent",
-    "proficient": "Proficient",
-    "expert": "Expert"
-  },
   "actions": {
     "addSkill": "Add skill",
+    "updateSkill": "Update skill",
     "removeSkills": "Remove skills"
   }
 }

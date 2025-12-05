@@ -78,3 +78,20 @@ export interface Project extends BaseEntity, Named, TimePeriod {
 export type Department = BaseEntity & Named;
 
 export type Position = BaseEntity & Named;
+
+export interface SkillCategory {
+  id: string;
+  name: string;
+  order: number;
+  parent: SkillCategory | null;
+  children: SkillCategory[];
+}
+
+export interface Skill {
+  id: string;
+  created_at: string;
+  name: string;
+  category: SkillCategory | null;
+  category_name: string | null;
+  category_parent_name: string | null;
+}
