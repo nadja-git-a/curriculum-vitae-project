@@ -1,5 +1,4 @@
 import { Box, CircularProgress } from "@mui/material";
-import type { ReactElement } from "react";
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -14,52 +13,6 @@ const UsersPage = lazy(() => import("pages/UsersPage/UsersPage"));
 const UserProfilePage = lazy(() => import("pages/UserProfilePage/UserProfilePage"));
 const UserSkillsPage = lazy(() => import("pages/UserSkillsPage/UserSkillsPage"));
 const ProfileSkillPage = lazy(() => import("pages/ProfileSkillPage/ProfileSkillPage"));
-
-type Allowed = "guest" | "user";
-
-interface AppRoute {
-  path: string;
-  element: ReactElement;
-  allowed: Allowed;
-}
-
-// export const ROUTES: AppRoute[] = [
-//   {
-//     path: "/",
-//     element: <LogInPage />,
-//     allowed: "guest",
-//   },
-//   {
-//     path: "/auth/signup",
-//     element: <SignUpPage />,
-//     allowed: "guest",
-//   },
-//   {
-//     path: "/auth/login",
-//     element: <LogInPage />,
-//     allowed: "guest",
-//   },
-//   {
-//     path: "/users",
-//     element: <UsersPage />,
-//     allowed: "user",
-//   },
-//   {
-//     path: "/user/:id/profile",
-//     element: <UserProfilePage />,
-//     allowed: "user",
-//   },
-//   {
-//     path: "/skills",
-//     element: <UserSkillsPage />,
-//     allowed: "user",
-//   },
-//   {
-//     path: "/user/:userId/skills",
-//     element: <ProfileSkillPage />,
-//     allowed: "user",
-//   },
-// ];
 
 const router = createBrowserRouter([
   {
