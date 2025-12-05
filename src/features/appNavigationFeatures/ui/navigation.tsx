@@ -5,6 +5,7 @@ import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import type { ReactNode } from "react";
 
 interface Navigators {
+  id: string;
   icon: ReactNode;
   link: string;
   translation:
@@ -16,21 +17,25 @@ interface Navigators {
 
 export const navigators: Navigators[] = [
   {
+    id: "users",
     icon: <PeopleIcon />,
     link: "/users",
     translation: "navigation.employees",
   },
   {
+    id: "skills",
     icon: <TrendingUpIcon />,
     link: "/skills",
     translation: "navigation.skills",
   },
   {
+    id: "languages",
     icon: <TranslateIcon />,
     link: "/languages",
     translation: "navigation.languages",
   },
   {
+    id: "cvs",
     icon: <DescriptionIcon />,
     link: "/cvs",
     translation: "navigation.cvs",

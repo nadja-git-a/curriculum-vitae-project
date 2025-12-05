@@ -9,6 +9,8 @@ const SignUpPage = lazy(() => import("pages/SignUpPage/ui/SignUpPage"));
 const LogInPage = lazy(() => import("pages/LogInPage/ui/LogInPage"));
 const UsersPage = lazy(() => import("pages/UsersPage/UsersPage"));
 const UserProfilePage = lazy(() => import("pages/UserProfilePage/UserProfilePage"));
+const UserSkillsPage = lazy(() => import("pages/UserSkillsPage/UserSkillsPage"));
+const ProfileSkillPage = lazy(() => import("pages/ProfileSkillPage/ProfileSkillPage"));
 
 type Allowed = "guest" | "user";
 
@@ -42,6 +44,16 @@ export const ROUTES: AppRoute[] = [
   {
     path: "/user/:id/profile",
     element: <UserProfilePage />,
+    allowed: "user",
+  },
+  {
+    path: "/skills",
+    element: <UserSkillsPage />,
+    allowed: "user",
+  },
+  {
+    path: "/user/:userId/skills",
+    element: <ProfileSkillPage />,
     allowed: "user",
   },
 ];

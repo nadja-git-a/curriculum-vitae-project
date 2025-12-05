@@ -1,17 +1,10 @@
 import { Box } from "@mui/material";
-import { Navigate, useParams } from "react-router-dom";
 
 import { AppNavigation } from "features/appNavigationFeatures/ui/AppNavigation";
 import { ProfileNavigation } from "features/profileNavigationFeatures/ui/ProfileNavigation";
-import { UserProfile } from "features/userProfileFeatures/ui/UserProfile";
+import { UserSkills } from "features/userSkillsFeatures/ui/UserSkills";
 
-export default function UserProfilePage() {
-  const { id } = useParams();
-
-  if (!id) {
-    return <Navigate to="/users" />;
-  }
-
+export default function ProfileSkillPage() {
   return (
     <Box sx={{ display: "flex", width: "100%", height: "100vh" }}>
       <Box
@@ -30,7 +23,7 @@ export default function UserProfilePage() {
         </Box>
 
         <Box sx={{ flex: 1, overflow: "auto", p: 3 }}>
-          <UserProfile id={id} />
+          <UserSkills />
         </Box>
       </Box>
     </Box>

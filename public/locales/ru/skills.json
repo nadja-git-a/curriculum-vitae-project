@@ -1,16 +1,11 @@
 {
+  "title": "Навык",
   "categories": {
     "programmingLanguages": "Языки программирования"
   },
-  "mastery": {
-    "novice": "Новичок",
-    "advanced": "Продвинутый",
-    "competent": "Компетентный",
-    "proficient": "Опытный",
-    "expert": "Эксперт"
-  },
   "actions": {
     "addSkill": "Добавить навык",
+    "updateSkill": "Обновить навык",
     "removeSkills": "Удалить навыки"
   }
 }
