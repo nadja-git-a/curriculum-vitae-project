@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 import { AppNavigation } from "features/appNavigationFeatures/ui/AppNavigation";
 
-export function AppWrapper() {
+export function AppWrapperPage() {
   return (
     <Box sx={{ display: "flex", width: "100%" }}>
       <Box>
