@@ -95,3 +95,11 @@ export interface Skill {
   category_name: string | null;
   category_parent_name: string | null;
 }
+
+export interface Language {
+  id: string;
+  created_at: string;
+  iso2: string;
+  name: string;
+  native_name: string;
+}

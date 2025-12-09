@@ -19,7 +19,8 @@ type Namespace =
   | "auth"
   | "errors"
   | "positions"
-  | "mastery";
+  | "mastery"
+  | "proficiency";
 
 i18n
   .use(initReactI18next)
