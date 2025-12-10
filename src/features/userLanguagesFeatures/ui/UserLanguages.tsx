@@ -67,6 +67,18 @@ export function UserLanguages() {
     });
   };
 
+  const handleSkillClick = (lang: { name: string; proficiency: Proficiency }) => {
+    if (isDeleteMode) {
+      toggleMode(lang.name);
+    } else {
+      setEditingLanguage({
+        language: lang.name,
+        proficiency: lang.proficiency,
+      });
+      setOpenUpdate(true);
+    }
+  };
+
   const { mutate: deleteLanguage, isPending: isDeleting } = useDeleteProfileLanguage();
 
   const handleDelete = () => {
@@ -117,9 +129,9 @@ export function UserLanguages() {
             >
               {!isDeleteMode && t("skills:actions.removeSkills")}
 
-              {isDeleteMode && selectedCount === 0 && t("common:actions.cancel")}
-
-              {isDeleteMode && selectedCount > 0 && t("skills:actions.removeSkills")}
+              {isDeleteMode && selectedCount === 0
+                ? t("common:actions.cancel")
+                : t("skills:actions.removeSkills")}
             </Button>
 
             <Button
@@ -146,20 +158,12 @@ export function UserLanguages() {
           const progress = PROFICIENCY_PROGRESS[lang.proficiency];
           const isSelected = selectedSkills.has(lang.name);
 
-          const handleSkillClick = () => {
-            if (isDeleteMode) {
-              toggleMode(lang.name);
-            } else {
-              setEditingLanguage({
-                language: lang.name,
-                proficiency: lang.proficiency,
-              });
-              setOpenUpdate(true);
-            }
-          };
-
           return (
-            <Button key={lang.name} onClick={handleSkillClick} sx={{ p: 0, textTransform: "none" }}>
+            <Button
+              key={lang.name}
+              onClick={() => handleSkillClick(lang)}
+              sx={{ p: 0, textTransform: "none" }}
+            >
               <Box
                 sx={{
                   minWidth: 200,
