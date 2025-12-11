@@ -28,6 +28,7 @@ const resources = {
   errors,
   positions,
   mastery,
+  proficiency,
 };
 
 declare module "i18next" {
