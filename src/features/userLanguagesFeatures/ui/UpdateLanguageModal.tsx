@@ -135,14 +135,12 @@ export function UpdateLanguageModal({ open, proficiency, language, onClose }: La
         </DialogContent>
 
         <DialogActions
-          sx={{
-            px: 3,
-            pb: 3,
-            pt: 1,
+          sx={(theme) => ({
+            p: theme.spacing(1, 3, 3),
             display: "flex",
             justifyContent: "flex-end",
             gap: 1.5,
-          }}
+          })}
         >
           <Button
             variant="text"
