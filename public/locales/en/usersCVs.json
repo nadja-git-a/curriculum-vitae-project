@@ -7,6 +7,8 @@
   "actions": {
     "createCv": "Create CV",
     "deleteCv": "Delete CV",
+    "details": "Details",
+    "description": "Description",
     "deleteMessage": "Are you sure you want to delete"
   }
 }

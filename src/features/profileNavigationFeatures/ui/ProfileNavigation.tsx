@@ -14,18 +14,34 @@ export function ProfileNavigation() {
   const userId = user?.id ?? "";
 
   const pathname = location.pathname;
-  const section: "profile" | "skills" | "languages" = pathname.endsWith("/skills")
-    ? "skills"
-    : pathname.endsWith("/languages")
-      ? "languages"
-      : "profile";
 
-  const sectionLabel =
-    section === "profile"
-      ? t("common:navigation.profile")
-      : section === "skills"
-        ? t("common:navigation.skills")
-        : t("common:navigation.languages");
+  const section: "profile" | "skills" | "languages" | "cvs" = (() => {
+    switch (true) {
+      case pathname.endsWith("/skills"):
+        return "skills";
+      case pathname.endsWith("/languages"):
+        return "languages";
+      case pathname.endsWith("/cvs"):
+        return "cvs";
+      default:
+        return "profile";
+    }
+  })();
+
+  const sectionLabel = (() => {
+    switch (section) {
+      case "profile":
+        return t("common:navigation.profile");
+      case "skills":
+        return t("common:navigation.skills");
+      case "languages":
+        return t("common:navigation.languages");
+      case "cvs":
+        return t("navigation.cvs");
+      default:
+        return "profile";
+    }
+  })();
 
   const tabs = [
     {
@@ -42,6 +58,11 @@ export function ProfileNavigation() {
       key: "languages",
       label: t("common:navigation.languages"),
       path: `/user/${userId}/languages`,
+    },
+    {
+      key: "cvs",
+      label: t("common:navigation.cvs"),
+      path: `/user/${userId}/cvs`,
     },
   ] as const;
 
