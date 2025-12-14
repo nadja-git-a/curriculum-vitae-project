@@ -37,7 +37,7 @@ export const navigators: Navigators[] = [
   {
     id: "cvs",
     icon: <DescriptionIcon />,
-    link: "/cvs",
+    link: `/cvs`,
     translation: "navigation.cvs",
   },
 ];

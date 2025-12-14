@@ -7,6 +7,8 @@
   "actions": {
     "createCv": "Создать резюме",
     "deleteCv": "Удалить резюме",
+    "details": "Детали",
+    "description": "Описание",
     "deleteMessage": "Вы уверенны, что хотите удалить"
   }
 }

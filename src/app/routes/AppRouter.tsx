@@ -15,6 +15,8 @@ const ProfileSkillPage = lazy(() => import("pages/ProfileSkillPage/ProfileSkillP
 const AppWrapperPage = lazy(() => import("pages/AppWrapperPage/AppWrapperPage"));
 const UserLanguagesPage = lazy(() => import("pages/UserLanguagesPage/UserLanguagesPage"));
 const ProfileLanguagesPage = lazy(() => import("pages/ProfileLanguagesPage/ProfileLanguagesPage"));
+const UserCVPage = lazy(() => import("pages/UserCVPage/UserCVPage"));
+const CVPage = lazy(() => import("pages/CVPage.tsx/CVPage"));
 
 const router = createBrowserRouter([
   {
@@ -50,6 +52,7 @@ const router = createBrowserRouter([
       { path: "users", element: <UsersPage /> },
       { path: "skills", element: <UserSkillsPage /> },
       { path: "languages", element: <UserLanguagesPage /> },
+      { path: "cvs", element: <CVPage /> },
 
       {
         path: "user/:id",
@@ -58,6 +61,7 @@ const router = createBrowserRouter([
           { path: "profile", element: <UserProfilePage /> },
           { path: "skills", element: <ProfileSkillPage /> },
           { path: "languages", element: <ProfileLanguagesPage /> },
+          { path: "cvs", element: <UserCVPage /> },
         ],
       },
     ],
